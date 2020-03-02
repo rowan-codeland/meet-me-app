@@ -1,15 +1,10 @@
-<html>
-    <head>
-    
-    </head>
-    <body>
+{% extends 'base.html' %}
+{% block content %}
         {% for meeting in meetings %}
             {{meeting.meeting_type}}
-            {{meeting.meeintg_name}}
+            {{meeting.meeting_name}}
             {{meeting.meeting_duration}}
             {{meeting.meeting_time}}
             {{meeting.meeting_date}}
         {% endfor %}
-    
-    </body>
-</html>
+{% endblock %}
