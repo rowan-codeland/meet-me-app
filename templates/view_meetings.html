@@ -2,22 +2,22 @@
 
 {% block content %}
 {% for meeting in meetings %}
+<br>
 <div class="container">
 	<div class="row row-striped">
 		<div class="col-2 text-right">
 			<h1 class="display-4"><span class="badge badge-secondary">{{meeting.meeting_date.strftime("%d")}}</span></h1>
-			<h2>{{meeting.meeting_date.strftime("%m")}}</h2>
+			<h2>{{meeting.meeting_date.strftime("%B")}}</h2>
 		</div>
 		<div class="col-10">
 			<h3 class="text-uppercase"><strong>{{meeting.meeting_name}}</strong></h3>
-            <h6>{{meeting.meeting_type}}</h5>
 			<ul class="list-inline">
-				<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{meeting.meeting_date.strftime("%w")}}</li>
-				<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {{meeting.meeting_date.strftime("%H")}}:{{meeting.meeting_date.strftime("%M")}}</li>
+				<h6><li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{meeting.meeting_date.strftime("%A")}}</li>
+                <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {{meeting.meeting_date.strftime("%H")}}:{{meeting.meeting_date.strftime("%M")}}</li></h6>
                 <li class="list-inline-item">Duration: {{meeting.meeting_duration}}</li>
 			</ul>
-			<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-				dolore magna aliqua.</p>
+			<p>Bacon ipsum dolor amet doner sausage corned beef chicken strip steak pork chop t-bone leberkas shank chislic spare ribs ball tip drumstick. 
+                Porchetta jowl shankle tail meatloaf bacon rump strip steak turducken buffalo hamburger landjaeger jerky leberkas.</p>
 		</div>
 	</div>
 </div>
