@@ -1,25 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-
-
+{% for meeting in meetings %}
 <div class="container">
 	<div class="row row-striped">
 		<div class="col-2 text-right">
-			<h1 class="display-4"><span class="badge badge-secondary">Day?</span></h1>
-			<h2>Month?</h2>
-			</h2>
+        {{% for day in meeting.meeting_date %}}
+			<h1 class="display-4"><span class="badge badge-secondary">6</span></h1>
+			<h2>June</h2>
+        {{% endfor %}}
 		</div>
 		<div class="col-10">
-			<h3 class="text-uppercase"><strong>Meeting Name</strong></h3>
+			<h3 class="text-uppercase"><strong>{{meeting.meeting_name}}</strong></h3>
+            <h6>{{meeting.meeting_type}}</h5>
 			<ul class="list-inline">
-				<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> </li>
-				<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i></li>
+				<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> {{meeting.meeting_date}} </li>
+				<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> {{meeting.meeting_time}}</li>
+                <li class="list-inline-item">Duration: {{meeting.meeting_duration}}</li>
 			</ul>
 			<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
 				dolore magna aliqua.</p>
 		</div>
 	</div>
 </div>
+{% endfor %}
 {% endblock %}
+
+
+
+{{meeting.meeting_type}}
+{{meeting.meeting_duration}}
