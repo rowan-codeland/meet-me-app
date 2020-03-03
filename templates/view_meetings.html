@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
+
 {% block content %}
-        {% for meeting in meetings %}
-            {{meeting.meeting_type}}
-            {{meeting.meeting_name}}
-            {{meeting.meeting_duration}}
-            {{meeting.meeting_time}}
-            {{meeting.meeting_date}}
-        {% endfor %}
+
+
+
+<div class="container">
+	<div class="row row-striped">
+		<div class="col-2 text-right">
+			<h1 class="display-4"><span class="badge badge-secondary">Day?</span></h1>
+			<h2>Month?</h2>
+			</h2>
+		</div>
+		<div class="col-10">
+			<h3 class="text-uppercase"><strong>Meeting Name</strong></h3>
+			<ul class="list-inline">
+				<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> </li>
+				<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i></li>
+			</ul>
+			<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua.</p>
+		</div>
+	</div>
+</div>
 {% endblock %}
