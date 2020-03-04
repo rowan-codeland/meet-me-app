@@ -24,9 +24,10 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content p-5">
 				<form class="needs-validation" novalidate>
-					<div class="form-row">
-						<div class="col-md-4 mb-3">
-							<input type="text" class="form-control" id="validationCustom01" placeholder="Meeting Name" value="" required>
+					<div class="form-row py-4">
+						<div class="col-md-12">
+							<label for="validationCustom01">Meeting Name</label>
+							<input type="text" class="form-control" id="validationCustom01" placeholder="Give your meeting a brief and snappy name" value="" required>
 							<div class="valid-feedback">
 								Sounds Exciting!
 							</div>
@@ -34,12 +35,14 @@
 					</div>
 					<div class="form-row">
 						<div class="col-md-4 mb-3">
+							<label for="validationCustom02">Meeting Date</label>
 							<input type="date" class="form-control" id="validationCustom02" placeholder="Date" value="" step="15000000" required>
 							<div class="valid-feedback">
 								Oh, that's my birthday!
 							</div>
 						</div>
 						<div class="col-md-4 mb-3">
+							<label for="validationCustom01">Start Time</label>
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupPrepend">C</span>
@@ -51,25 +54,31 @@
 							</div>
 						</div>
 						<div class="col-md-4 mb-3">
+							<label for="validationCustom01">Meeting Duration</label>
 							<div class="input-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroupPrepend">C</span>
 								</div>
-								<input type="text" class="form-control" id="validationCustom04" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
+								<input type="time" class="form-control" id="validationCustom04" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
 								<div class="invalid-feedback">
 									Every meetings gotta end
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="form-row">
-						<div class="col-md-12">
-							<input type="text" class="form-control" id="validationCustom05" placeholder="Description" required>
-							<div class="invalid-feedback">
-                            Tell me what the meeting is about
-							</div>
+					<div class="form-group py-4">
+						<label for="exampleFormControlTextarea1">Meeting Description</label>
+						<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
+						<div class="invalid-feedback">
+							Tell me what the meeting is about
 						</div>
 					</div>
+					<!-- <div class="form-group">
+						
+							<textarea class="form-control" id="validationCustom05"  rows="3">
+
+						</div>
+					</div> -->
 					<button class="btn btn-primary" type="submit">Submit form</button>
 				</form>
 			</div>
