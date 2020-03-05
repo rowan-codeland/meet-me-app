@@ -3,6 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from os import path
+from datetime import datetime
 if path.exists("env.py"):
     import env 
 
@@ -17,6 +18,12 @@ mongo = PyMongo(app)
 @app.route('/view_meetings')
 def view_meetings():
     return render_template("view_meetings.html", meetings=mongo.db.meetings.find())
+
+@app.route('/insert_meeting', methods=['POST'])
+def insert_meeting():
+    meetings = mongo.db.meetings
+    meetings.insert_one(request.form.to_dict())
+    return redirect(url_for('view_meetings'))
 
 
 if __name__ == '__main__':
