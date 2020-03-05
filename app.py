@@ -15,10 +15,12 @@ app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/view_meetings')
 def view_meetings():
-    return render_template("view_meetings.html", meetings=mongo.db.meetings.find())
+    return render_template("view_meetings.html", meetings=mongo.db.meetings.find().sort('meeting_date'))
+
 
 @app.route('/insert_meeting', methods=['POST'])
 def insert_meeting():
