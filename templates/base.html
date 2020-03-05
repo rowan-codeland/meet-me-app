@@ -5,10 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Document</title>
 </head>
@@ -35,46 +39,47 @@
 						</div>
 					</div>
 					<div class="form-row">
-						<div class="col-md-4 mb-3">
-							<label for="validationCustom02">Meeting Date</label>
-							<input type="date" class="form-control" name="meeting_date" id="meeting_date" placeholder="Date" value=""required>
-							<div class="valid-feedback">
-								Oh, that's my birthday!
+                    <label for="dateandtime">Pick a date & time</label>
+						<div class="container">
+							<div style="overflow:hidden;">
+								<div class="form-group">
+									<div class="row">
+										<div class="col-md-8" id="dateandtime">
+											<div id="datetimepicker13"></div>
+										</div>
+									</div>
+								</div>
+								<script type="text/javascript">
+									$(function () {
+                                        $('#datetimepicker13').datetimepicker({
+                                            inline: true,
+                                            sideBySide: true,
+                                            minDate: false
+                                        });
+                                    });
+								</script>
+							</div>
+                        </div>
+							<div class="col-md-4 mb-3">
+								<label for="validationCustom01">Meeting Duration</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="inputGroupPrepend">C</span>
+									</div>
+									<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
+									<div class="invalid-feedback">
+										Every meetings gotta end
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="col-md-4 mb-3">
-							<label for="validationCustom01">Start Time</label>
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text" id="inputGroupPrepend">C</span>
-								</div>
-								<input type="time" class="form-control" name="meeting_time" id="meeting_time" placeholder="Time" aria-describedby="inputGroupPrepend" required>
-								<div class="invalid-feedback">
-									Every meetings gotta start
-								</div>
+						<div class="form-group py-4">
+							<label for="exampleFormControlTextarea1">Meeting Description</label>
+							<textarea class="form-control" name="meeting_description" id="meeting_description" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
+							<div class="invalid-feedback">
+								Tell me what the meeting is about
 							</div>
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="validationCustom01">Meeting Duration</label>
-							<div class="input-group">
-								<div class="input-group-prepend">
-									<span class="input-group-text" id="inputGroupPrepend">C</span>
-								</div>
-								<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
-								<div class="invalid-feedback">
-									Every meetings gotta end
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="form-group py-4">
-						<label for="exampleFormControlTextarea1">Meeting Description</label>
-						<textarea class="form-control" name="meeting_description" id="meeting_description" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
-						<div class="invalid-feedback">
-							Tell me what the meeting is about
-						</div>
-					</div>
-					<button class="btn btn-primary" type="submit">Submit form</button>
+						<button class="btn btn-primary" type="submit">Submit form</button>
 				</form>
 			</div>
 		</div>
@@ -102,10 +107,16 @@
 })();
 	</script>
 
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js">
+	</script>
 	<script src="assets/js/main.js"></script>
 </body>
 
