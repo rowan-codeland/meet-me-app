@@ -13,6 +13,7 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+    <script src="https://kit.fontawesome.com/420a3cb873.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<title>Document</title>
 </head>
@@ -39,46 +40,50 @@
 						</div>
 					</div>
 					<div class="form-row">
-                    <label for="dateandtime">Pick a date & time</label>
+						<label for="dateandtime">Pick a date & time</label>
 						<div class="container">
-							<div style="overflow:hidden;">
-								<div class="form-group">
-									<div class="row">
-										<div class="col-md-8" id="dateandtime">
-											<div id="datetimepicker13"></div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1"/>
+											<div class="input-group-append" data-target="#datetimepicker1"
+												data-toggle="datetimepicker">
+												<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+											</div>
 										</div>
 									</div>
 								</div>
 								<script type="text/javascript">
 									$(function () {
-                                        $('#datetimepicker13').datetimepicker({
-                                            inline: true,
+                                        $('#datetimepicker1').datetimepicker({
                                             sideBySide: true,
-                                            minDate: "moment"
+                                            minDate: "moment",
+                                            stepping: 5
                                         });
                                     });
 								</script>
 							</div>
-                        </div>
-							<div class="col-md-4 mb-3">
-								<label for="validationCustom01">Meeting Duration</label>
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="inputGroupPrepend">C</span>
-									</div>
-									<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
-									<div class="invalid-feedback">
-										Every meetings gotta end
-									</div>
+						</div>
+						<div class="col-md-4 mb-3">
+							<label for="validationCustom01">Meeting Duration</label>
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="inputGroupPrepend">C</span>
+								</div>
+								<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
+								<div class="invalid-feedback">
+									Every meetings gotta end
 								</div>
 							</div>
 						</div>
-						<div class="form-group py-4">
-							<label for="exampleFormControlTextarea1">Meeting Description</label>
-							<textarea class="form-control" name="meeting_description" id="meeting_description" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
-							<div class="invalid-feedback">
-								Tell me what the meeting is about
-							</div>
+					</div>
+					<div class="form-group py-4">
+						<label for="exampleFormControlTextarea1">Meeting Description</label>
+						<textarea class="form-control" name="meeting_description" id="meeting_description" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
+						<div class="invalid-feedback">
+							Tell me what the meeting is about
+						</div>
 						<button class="btn btn-primary" type="submit">Submit form</button>
 				</form>
 			</div>

@@ -3,6 +3,7 @@
 {% block content %}
 {% for meeting in meetings %}
 <br>
+<table class= "table-striped">
 <div class="container">
 	<div class="row row-striped">
 		<div class="col-2 text-right">
@@ -10,7 +11,7 @@
 			</h1>
 			<h2>{{meeting.meeting_date.strftime("%B")}}</h2>
 		</div>
-		<div class="col-10">
+		<div class="col-8">
 			<h3 class="text-uppercase"><strong>{{meeting.meeting_name}}</strong></h3>
 			<ul class="list-inline">
 				<h6>
@@ -23,6 +24,10 @@
 			</ul>
 			<p>{{meeting.meeting_description}}</p>
 		</div>
+        <div class="col-2">
+        <button type="button" class="btn btn-outline-info"><i class="fas fa-pen"></i></button>
+        <button type="button" class="btn btn-outline-info"><i class="fas fa-trash"></i></button>
+        </div>
 	</div>
 </div>
 {% endfor %}
