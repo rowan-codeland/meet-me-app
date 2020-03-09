@@ -4,67 +4,69 @@
 
 <!------------------- Modal for editing a task ---------------->
 <h3>Edit Meeting</h3>
-<form  method="POST" class="needs-validation"
-	novalidate>
+<container>
+	<form method="POST" class="needs-validation" novalidate>
 
-	<div class="form-row py-4">
-		<div class="col-md-12">
-			<label for="validationCustom01">Meeting Name</label>
-			<input type="text" class="form-control" name="meeting_name" id="meeting_name" placeholder="Give your meeting a brief and snappy name" value="{{meeting.meeting_name}}" required>
-			<div class="valid-feedback">
-				Sounds Exciting!
+		<div class="form-row py-4">
+			<div class="col-md-12">
+				<label for="validationCustom01">Meeting Name</label>
+				<input type="text" class="form-control" name="meeting_name" id="meeting_name" placeholder="Give your meeting a brief and snappy name" value="{{meeting.meeting_name}}" required>
+				<div class="valid-feedback">
+					Sounds Exciting!
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="form-row">
-		<label for="dateandtime">Pick a date & time</label>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="form-group">
-						<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-							<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1"/>
-							<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-								<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+		<div class="form-row">
+			<label for="dateandtime">Pick a date & time</label>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="form-group">
+							<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+								<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1" value=""/>
+								<div class="input-group-append" data-target="#datetimepicker1"
+									data-toggle="datetimepicker">
+									<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<script type="text/javascript">
-					$(function () {
+					<script type="text/javascript">
+						$(function () {
                                         $('#datetimepicker1').datetimepicker({
                                             sideBySide: true,
                                             minDate: "moment",
                                             stepping: 5
                                         });
                                     });
-				</script>
-			</div>
-		</div>
-		<div class="col-md-4 mb-3">
-			<label for="validationCustom01">Meeting Duration</label>
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text" id="inputGroupPrepend">C</span>
-				</div>
-				<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" value="" required>
-				<div class="invalid-feedback">
-					Every meetings gotta end
+					</script>
 				</div>
 			</div>
+			<div class="col-md-4 mb-3">
+				<label for="validationCustom01">Meeting Duration</label>
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="inputGroupPrepend">C</span>
+					</div>
+					<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" value="{{meeting.meeting_duration}}" required>
+					<div class="invalid-feedback">
+						Every meetings gotta end
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="col-md-12">
 		<label for="exampleFormControlTextarea1">Meeting Description</label>
-		<textarea class="form-control" name="meeting_description" id="meeting_description" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
-		<div class="invalid-feedback">
-			Tell me what the meeting is about
+        <input type="text" class="form-control" name="meeting_description" id="meeting_description" value="{{meeting.meeting_description}}" rows="3"></textarea>
+			<div class="invalid-feedback">
+				Tell me what the meeting is about
+			</div>
+            <br>
+			<button class="btn btn-primary" type="submit">Submit form</button>
 		</div>
-		<button class="btn btn-primary" type="submit">Submit form</button>
+	</form>
 	</div>
-</form>
-</div>
-</div>
-</div>
+	</div>
+	</div>
+</container>
 
 {% endblock %}
