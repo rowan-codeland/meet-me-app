@@ -23,7 +23,7 @@
 					<div class="col-sm-6">
 						<div class="form-group">
 							<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-								<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1" value=""/>
+								<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1" value="{{meeting.meeting_date}}"/>
 								<div class="input-group-append" data-target="#datetimepicker1"
 									data-toggle="datetimepicker">
 									<div class="input-group-text"><i class="fa fa-calendar"></i></div>
@@ -35,7 +35,7 @@
 						$(function () {
                                         $('#datetimepicker1').datetimepicker({
                                             sideBySide: true,
-                                            minDate: "moment",
+                                            date: "{{meeting.meeting_date}}",
                                             stepping: 5
                                         });
                                     });
