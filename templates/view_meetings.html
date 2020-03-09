@@ -1,37 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 {% for meeting in meetings %}
 <br>
-<table class= "table-striped">
-<div class="container">
-	<div class="row row-striped">
-		<div class="col-2 text-right">
-			<h1 class="display-4"><span class="badge badge-secondary">{{meeting.meeting_date.strftime("%d")}}</span>
-			</h1>
-			<h2>{{meeting.meeting_date.strftime("%B")}}</h2>
+<table class="table-striped">
+	<div class="container">
+		<div class="row row-striped">
+			<div class="col-2 text-right">
+				<h1 class="display-4"><span class="badge badge-secondary">{{meeting.meeting_date.strftime("%d")}}</span>
+				</h1>
+				<h2>{{meeting.meeting_date.strftime("%B")}}</h2>
+			</div>
+			<div class="col-8">
+				<h3 class="text-uppercase"><strong>{{meeting.meeting_name}}</strong></h3>
+				<ul class="list-inline">
+					<h6>
+						<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i>
+							{{meeting.meeting_date.strftime("%A")}}</li>
+						<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i>
+							{{meeting.meeting_date.strftime("%H")}}:{{meeting.meeting_date.strftime("%M")}}</li>
+					</h6>
+					<li class="list-inline-item">Duration: {{meeting.meeting_duration}}</li>
+				</ul>
+				<p>{{meeting.meeting_description}}</p>
+			</div>
+			<div class="col-2">
+				<a href="{{url_for('edit_meeting', meeting_id=meeting._id)}}" role="button" class="btn btn-outline-info"><i class="fas fa-pen"></i></a>
+				<button type="button" class="btn btn-outline-info"><i class="fas fa-trash"></i></button>
+			</div>
 		</div>
-		<div class="col-8">
-			<h3 class="text-uppercase"><strong>{{meeting.meeting_name}}</strong></h3>
-			<ul class="list-inline">
-				<h6>
-					<li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i>
-						{{meeting.meeting_date.strftime("%A")}}</li>
-					<li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i>
-						{{meeting.meeting_date.strftime("%H")}}:{{meeting.meeting_date.strftime("%M")}}</li>
-				</h6>
-				<li class="list-inline-item">Duration: {{meeting.meeting_duration}}</li>
-			</ul>
-			<p>{{meeting.meeting_description}}</p>
-		</div>
-        <div class="col-2">
-        <button type="button" class="btn btn-outline-info"><i class="fas fa-pen"></i></button>
-        <button type="button" class="btn btn-outline-info"><i class="fas fa-trash"></i></button>
-        </div>
 	</div>
-</div>
-{% endfor %}
-<div class="text-center">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add new meeting</button>
-</div>
-{% endblock %}
+
+	{% endfor %}
+	{% endblock %}
