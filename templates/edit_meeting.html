@@ -4,9 +4,8 @@
 
 <!------------------- Modal for editing a task ---------------->
 <h3>Edit Meeting</h3>
-<container>
+<div class="container">
 	<form action="{{ url_for('update_meeting', meeting_id=meeting._id) }}" method="POST" class="needs-validation" novalidate>
-
 		<div class="form-row py-4">
 			<div class="col-md-12">
 				<label for="validationCustom01">Meeting Name</label>
