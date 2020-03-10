@@ -20,6 +20,9 @@ mongo = PyMongo(app)
 def view_meetings():
     return render_template("view_meetings.html", meetings=mongo.db.meetings.find().sort('meeting_date'))
 
+@app.route('/add_meeting')
+def add_meeting():
+    return render_template("add_meeting.html")
 
 @app.route('/insert_meeting', methods=['POST'])
 def insert_meeting():

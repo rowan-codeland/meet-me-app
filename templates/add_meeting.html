@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<container>
+    <form action="{{ url_for('insert_meeting') }}" method="POST" class="needs-validation" novalidate>
+	<div class="form-row py-4">
+		<div class="col-md-12">
+			<label for="validationCustom01">Meeting Name</label>
+			<input type="text" class="form-control" name="meeting_name" id="validationCustom01" placeholder="Give your meeting a brief and snappy name" value="" required>
+			<div class="valid-feedback">
+				Sounds Exciting!
+			</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="col-md-6">
+			<label for="dateandtime">Pick a date & time</label>
+			<div class="form-group">
+				<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+					<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1" value="" required>
+					<div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+						<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+					</div>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(function () {
+                                        $('#datetimepicker1').datetimepicker({
+                                            sideBySide: true,
+                                            minDate: "moment",
+                                            stepping: 5
+                                        });
+                                    });
+			</script>
+		</div>
+		<div class="col-md-6">
+			<label for="validationCustom01">Meeting Duration</label>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-stopwatch"></i></span>
+				</div>
+				<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" value="" required>
+				<div class="invalid-feedback">
+					Every meetings gotta end
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="col-md-12">
+			<label for="validation04">Meeting Description</label>
+			<input type="text" class="form-control" name="meeting_description" id="validation04" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" vaue="" required></textarea>
+			<div class="invalid-feedback">
+				Tell me what the meeting is about
+			</div>
+		</div>
+	</div>
+	<div class="text-center mt-3">
+		<button class="btn btn-info" type="submit">Add meeting</button>
+	</div>
+	</div>
+</form>
+</container>
+
+{% endblock %}

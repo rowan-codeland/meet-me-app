@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<!------------------- Modal for editing a task ---------------->
 <h3>Edit Meeting</h3>
 <div class="container">
-	<form action="{{ url_for('update_meeting', meeting_id=meeting._id) }}" method="POST" class="needs-validation" novalidate>
+	<form action="{{ url_for('update_meeting', meeting_id=meeting._id) }}" method="POST" class="needs-validation"
+		novalidate>
 		<div class="form-row py-4">
 			<div class="col-md-12">
 				<label for="validationCustom01">Meeting Name</label>
@@ -55,17 +55,18 @@
 			</div>
 		</div>
 		<label for="exampleFormControlTextarea1">Meeting Description</label>
-        <input type="text" class="form-control" name="meeting_description" id="meeting_description" value="{{meeting.meeting_description}}" rows="3"></textarea>
-			<div class="invalid-feedback">
-				Tell me what the meeting is about
-			</div>
-            <br>
-			<button class="btn btn-primary" type="submit">Submit form</button>
-		</div>
-	</form>
-	</div>
-	</div>
-	</div>
+		<input type="text" class="form-control" name="meeting_description" id="meeting_description" value="{{meeting.meeting_description}}" rows="3"></textarea>
+		<div class="invalid-feedback">
+			Tell me what the meeting is about
+			</div>	
+</div>	
+<div class="text-center mt-3">	
+<button class="btn btn-info" type="submit">Add meeting</button>	
+</div>
+</form>
+</div>
+</div>
+</div>
 </container>
 
 {% endblock %}

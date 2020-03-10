@@ -29,7 +29,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 				<div class="text-center ml-auto">
-					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#addmodal">New Meeting</button>
+					<a href="{{url_for('add_meeting')}}" role="button" class="btn btn-info">Add a meeting</i></a>
 				</div>
 			</div>
 		</nav>
@@ -39,85 +39,13 @@
 	{% block content %}
 	{% endblock %}
 
-	<!----------Modal for adding a meeting----------->
-	<div class="modal fade bd-example-modal-lg" id="addmodal" tabindex="-1" role="dialog"
-		aria-labelledby="myLargeModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content p-5">
-				<div class="container">
-                <h3 class= "text-center">Add a meeting</h3>
-					<form action="{{ url_for('insert_meeting') }}" method="POST" class="needs-validation" novalidate>
-						<div class="form-row py-4">
-							<div class="col-md-12">
-								<label for="validationCustom01">Meeting Name</label>
-								<input type="text" class="form-control" name="meeting_name" id="meeting_name" placeholder="Give your meeting a brief and snappy name" value="" required>
-								<div class="valid-feedback">
-									Sounds Exciting!
-								</div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="col-md-6">
-								<label for="dateandtime">Pick a date & time</label>
-								<div class="form-group">
-									<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-										<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1"/>
-										<div class="input-group-append" data-target="#datetimepicker1"
-											data-toggle="datetimepicker">
-											<div class="input-group-text"><i class="fa fa-calendar"></i></div>
-										</div>
-									</div>
-								</div>
-								<script type="text/javascript">
-									$(function () {
-                                        $('#datetimepicker1').datetimepicker({
-                                            sideBySide: true,
-                                            minDate: "moment",
-                                            stepping: 5
-                                        });
-                                    });
-								</script>
-							</div>
-							<div class="col-md-6">
-								<label for="validationCustom01">Meeting Duration</label>
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="inputGroupPrepend"><i class="fas fa-stopwatch"></i></span>
-									</div>
-									<input type="time" class="form-control" name="meeting_duration" id="meeting_duration" placeholder="Meeting Duration" aria-describedby="inputGroupPrepend" required>
-									<div class="invalid-feedback">
-										Every meetings gotta end
-									</div>
-								</div>
-							</div>
-						</div>
-				</div>
-				<div class="col-md-12">
-					<label for="exampleFormControlTextarea1">Meeting Description</label>
-					<textarea class="form-control" name="meeting_description" id="meeting_description" placeholder="Give your meeting a short descritpion. Maybe try adding the agenda?" rows="3" required></textarea>
-					<div class="invalid-feedback">
-						Tell me what the meeting is about
-					</div>
-				    <div class= "text-center mt-3">  
-					<button class="btn btn-info" type="submit">Add meeting</button>
-                    </div>
-                </div>
-				</form>
-			</div>
-		</div>
-	</div>
-	</div>
 
-
-	<!-- Form submission script -->
-	<script>
-		// Example starter JavaScript for disabling form submissions if there are invalid fields
-(function() {
+<!-- Form submission script -->
+<script>
+$(document).ready(function() {
   'use strict';
   window.addEventListener('load', function() {
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.getElementsByClassName('needs-validation');
-    // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
@@ -129,7 +57,7 @@
     });
   }, false);
 })();
-	</script>
+</script>
 
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
