@@ -16,10 +16,8 @@
 			</div>
 		</div>
 		<div class="form-row">
+        <div class="col-md-6">
 			<label for="dateandtime">Pick a date & time</label>
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-6">
 						<div class="form-group">
 							<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
 								<input type="text" class="form-control datetimepicker-input" name="meeting_date" id="meeting_date" data-target="#datetimepicker1" value="{{meeting.meeting_date}}"/>
@@ -29,7 +27,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
 					<script type="text/javascript">
 						$(function () {
                                         $('#datetimepicker1').datetimepicker({
@@ -40,8 +37,7 @@
                                     });
 					</script>
 				</div>
-			</div>
-			<div class="col-md-4 mb-3">
+			<div class="col-md-6">
 				<label for="validationCustom01">Meeting Duration</label>
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -61,7 +57,7 @@
 			</div>	
 </div>	
 <div class="text-center mt-3">	
-<button class="btn btn-info" type="submit">Add meeting</button>	
+<button class="btn btn-info" type="submit">Update meeting</button>	
 </div>
 </form>
 </div>
