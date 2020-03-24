@@ -18,16 +18,18 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/view_meetings')
 def view_meetings():
-    return render_template("view_meetings.html", meetings=mongo.db.meetings.find().sort('meeting_date'))
+    return render_template("view_meetings.html",
+    meetings=mongo.db.meetings.find().sort('meeting_date'))
+
 
 @app.route('/add_meeting')
 def add_meeting():
     return render_template("add_meeting.html")
 
+
 @app.route('/insert_meeting', methods=['POST'])
 def insert_meeting():
     meetings = mongo.db.meetings
-
     meeting_name = request.form['meeting_name']
     meeting_duration = request.form['meeting_duration']
     meeting_description = request.form['meeting_description']
@@ -59,12 +61,12 @@ def update_meeting(meeting_id):
     meeting_date = parse(request.form['meeting_date'])
 
     meeting.update({'_id': ObjectId(meeting_id)},
-    {
+        {
         'meeting_name': meeting_name,
         'meeting_duration': meeting_duration,
         'meeting_description': meeting_description,
         'meeting_date': meeting_date
-    })
+        })
     return redirect(url_for('view_meetings'))
 
 
@@ -76,4 +78,5 @@ def delete_meeting(meeting_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
+
