@@ -1,35 +1,74 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Meet Me App
 
-Welcome Rowan,
+This application is a simple meeting application, users can create, view, edit and delete meetings. Each meeting has a field for the meeting name, description, time & date, and duration.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+## UX
 
-## Gitpod Reminders
+This application is built to clearly show and sort meetings based on the closest meeting date at the top and asscending downwards. I decided to seperate out the date object on the front end and display the day, month and day of the week so users can visually sort through the dates with minimal hassle.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Features
+There are 3 core database features (Create, Update, Delete) While creating and updating a meeting a user also uses text input fields, a custom date/time picker and a generic html timepicker for meeting duration. There is also front end form validation
+ 
+### Existing Features
+- Custom date and time picker is created with thanks to Tempus Dominus. It allows the user to pick both a date and time and that to be stored in a timestamp format within MongoDB.
+- The HTML5 timepicker used for duration saves data as a string to MongoDB
+- Input fields are using frontend data validation. This comes off the shelf from Bootstrap 4 forms and breathes interactivity into the form meaning the user will never be lost looking for a missing/ incorrect input.
 
-A blue button should appear to click: *Expose*,
+### Features Left to Implement
+- Given more time I would add the following features;
+- - Datbase form validation
+- - Moduls for confirming deletion of an entry
+- - 15 minute time stepping on the duration of a meeting
+- - Cap on the meeting duration
+- - User login and meetings linked to each user.
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## Technologies Used
 
-A blue button should appear to click: *Expose*,
+This webapp uses the following technologies;
 
-Another blue button should appear to click: *Open Browser*.
+- Python
+- Javascript
+- MongoDB
+- Bootstrap 4
+- HTML5
+- CSS3
+- Tempus Dominus
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+## Testing
 
-## Updates Since The Instructional Video
+1. Create a meeting
+    1. Select add meeting button
+    2. Fill in form
+    3. Click add meeting
+    4. Check if meeting is on homepage
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+2. Delete a meeting
+    1. Select trash icon beneath meeting
+    2. Check if meeting has been deleted
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+3. Update a meeting
+    1. Select pencil icon beneath meeting
+    2. Change fields on edit meeting form
+    3. Submit form
+    4. Check if meeting has been updated on homepage
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+4. Form validation
+    1. Fill out form leaving one entry blank
+    2. Check that form validation is red on that entry and green on remainders
+    3. Repeat for all form fields
+    4. Submit form with all fields correct format and filled in.
 
---------
 
-Happy coding!
+## Deployment
+
+This webapp is hosted using Heroku, deployed directly from the master branch. Every time a new commit is pushed to Heroku the deployed webapp will update.
+
+If you want to run this on your own machine or within your own IDE, type git clone https://github.com/rowan-codeland/flight-tracker.git into your terminal. Please then type "git remote rm origin" to sever ties with the original.
+
+## Credits
+
+### Depmus Dominus
+- https://tempusdominus.github.io/bootstrap-4/
+
