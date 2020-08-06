@@ -1,5 +1,6 @@
 # Meet Me App
-
+http://rowans-meet-me-app.herokuapp.com/
+CRUD Project using MongoDb & Deployed to Heroku
 This application is a simple meeting application, users can create, view, edit and delete meetings. Each meeting has a field for the meeting name, description, time & date, and duration.
 
 ## UX
@@ -65,7 +66,7 @@ This webapp uses the following technologies;
 
 This webapp is hosted using Heroku, deployed directly from the master branch. Every time a new commit is pushed to Heroku the deployed webapp will update.
 
-If you want to run this on your own machine or within your own IDE, type git clone https://github.com/rowan-codeland/flight-tracker.git into your terminal. Please then type "git remote rm origin" to sever ties with the original.
+If you want to run this on your own machine or within your own IDE, type git clone https://github.com/rowan-codeland/meet-me-app.git into your terminal. Please then type "git remote rm origin" to sever ties with the original.
 
 ## Credits
 
